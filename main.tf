@@ -12,7 +12,7 @@ provider "aws" {
 module ecs-cluster {
   source  = "cn-terraform/ecs-cluster/aws"
   version = "1.0.2"
-  name    = var.name_preffix
+  name    = var.name_prefix
   profile = var.profile
   region  = var.region
 }
@@ -23,7 +23,7 @@ module ecs-cluster {
 module "ecs-fargate-task-definition" {
   source       = "cn-terraform/ecs-fargate-task-definition/aws"
   version      = "1.0.8"
-  name_preffix = var.name_preffix
+  name_preffix = var.name_prefix
   profile      = var.profile
   region       = var.region
   command                      = var.command
@@ -62,9 +62,10 @@ module "ecs-fargate-task-definition" {
 # ECS Service
 # ---------------------------------------------------------------------------------------------------------------------
 module "ecs-fargate-service" {
-  source              = "cn-terraform/ecs-fargate-service/aws"
-  version             = "1.0.7"
-  name_preffix        = var.name_preffix
+  # source              = "cn-terraform/ecs-fargate-service/aws"
+  source              = "git@github.com:kirsis/terraform-aws-ecs-fargate-service.git?ref=https"
+  # version             = "1.0.7"
+  name_prefix         = var.name_prefix
   profile             = var.profile
   region              = var.region
   vpc_id              = var.vpc_id
@@ -77,6 +78,7 @@ module "ecs-fargate-service" {
   container_name        = module.ecs-fargate-task-definition.container_name
   container_port        = module.ecs-fargate-task-definition.container_port
   desired_count         = var.desired_count
+  certificate_arn       = var.certificate_arn
   platform_version      = var.platform_version
   propagate_tags        = var.propagate_tags
   service_registries    = var.service_registries

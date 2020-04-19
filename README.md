@@ -18,14 +18,14 @@ Check valid versions on:
         module "ecs-fargate" {
             source              = cn-terraform/ecs-fargate/aws
             version             = 2.0.9
-            name_preffix        = var.name_preffix
+            name_prefix        = var.name_prefix
             profile             = var.profile
             region              = var.region
             vpc_id              = module.networking.vpc_id
             availability_zones  = module.networking.availability_zones
             public_subnets_ids  = module.networking.public_subnets_ids
             private_subnets_ids = module.networking.private_subnets_ids
-            container_name               = ${var.name_preffix}-sonar
+            container_name               = ${var.name_prefix}-sonar
             container_image              = <IMAGE_NAME>:<IMAGE_TAG>
             container_cpu                = 1024
             container_memory             = 8192
@@ -45,7 +45,7 @@ The networking module should look like this:
         module "networking" {
     		    source          = cn-terraform/networking/aws
             version         = 2.0.3
-            name_preffix    = base
+            name_prefix    = base
             profile         = aws_profile
             region          = us-east-1
             vpc_cidr_block  = 192.168.0.0/16
@@ -60,7 +60,7 @@ Check versions for this module on:
 
 ## Input values
 
-* name_preffix: Name preffix for resources on AWS.
+* name_prefix: Name preffix for resources on AWS.
 * profile: AWS API key credentials to use.
 * region: AWS Region the infrastructure is hosted in.
 * vpc_id: ID of the VPC.
@@ -135,11 +135,3 @@ Check versions for this module on:
 * lb_arn_suffix: Load Balancer ARN Suffix
 * lb_dns_name: Load Balancer DNS Name
 * lb_zone_id: Load Balancer Zone ID
-
-
-
-
-
-
-
-

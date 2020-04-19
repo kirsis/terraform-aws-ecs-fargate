@@ -101,27 +101,27 @@ output "aws_ecs_service_service_desired_count" {
 # AWS LOAD BALANCER
 # ---------------------------------------------------------------------------------------------------------------------
 output "lb_id" {
-  description = "$${var.name_preffix} Load Balancer ID"
+  description = "$${var.name_prefix} Load Balancer ID"
   value       = module.ecs-fargate-service.lb_id
 }
 
 output "lb_arn" {
-  description = "$${var.name_preffix} Load Balancer ARN"
+  description = "$${var.name_prefix} Load Balancer ARN"
   value       = module.ecs-fargate-service.lb_arn
 }
 
 output "lb_arn_suffix" {
-  description = "$${var.name_preffix} Load Balancer ARN Suffix"
+  description = "$${var.name_prefix} Load Balancer ARN Suffix"
   value       = module.ecs-fargate-service.lb_arn_suffix
 }
 
 output "lb_dns_name" {
-  description = "$${var.name_preffix} Load Balancer DNS Name"
+  description = "$${var.name_prefix} Load Balancer DNS Name"
   value       = module.ecs-fargate-service.lb_dns_name
 }
 
 output "lb_zone_id" {
-  description = "$${var.name_preffix} Load Balancer Zone ID"
+  description = "$${var.name_prefix} Load Balancer Zone ID"
   value       = module.ecs-fargate-service.lb_zone_id
 }
 
@@ -129,41 +129,41 @@ output "lb_zone_id" {
 # AWS SECURITY GROUPS
 # ---------------------------------------------------------------------------------------------------------------------
 output "lb_sg_id" {
-  description = "$${var.name_preffix} Load Balancer Security Group - The ID of the security group"
+  description = "$${var.name_prefix} Load Balancer Security Group - The ID of the security group"
   value       = module.ecs-fargate-service.lb_sg_id
 }
 
 output "lb_sg_arn" {
-  description = "$${var.name_preffix} Load Balancer Security Group - The ARN of the security group"
+  description = "$${var.name_prefix} Load Balancer Security Group - The ARN of the security group"
   value       = module.ecs-fargate-service.lb_sg_arn
 }
 
 output "lb_sg_name" {
-  description = "$${var.name_preffix} Load Balancer Security Group - The name of the security group"
+  description = "$${var.name_prefix} Load Balancer Security Group - The name of the security group"
   value       = module.ecs-fargate-service.lb_sg_name
 }
 
 output "lb_sg_description" {
-  description = "$${var.name_preffix} Load Balancer Security Group - The description of the security group"
+  description = "$${var.name_prefix} Load Balancer Security Group - The description of the security group"
   value       = module.ecs-fargate-service.lb_sg_description
 }
 
 output "ecs_tasks_sg_id" {
-  description = "$${var.name_preffix} ECS Tasks Security Group - The ID of the security group"
+  description = "$${var.name_prefix} ECS Tasks Security Group - The ID of the security group"
   value       = module.ecs-fargate-service.ecs_tasks_sg_id
 }
 
 output "ecs_tasks_sg_arn" {
-  description = "$${var.name_preffix} ECS Tasks Security Group - The ARN of the security group"
+  description = "$${var.name_prefix} ECS Tasks Security Group - The ARN of the security group"
   value       = module.ecs-fargate-service.ecs_tasks_sg_arn
 }
 
 output "ecs_tasks_sg_name" {
-  description = "$${var.name_preffix} ECS Tasks Security Group - The name of the security group"
+  description = "$${var.name_prefix} ECS Tasks Security Group - The name of the security group"
   value       = module.ecs-fargate-service.ecs_tasks_sg_name
 }
 
 output "ecs_tasks_sg_description" {
-  description = "$${var.name_preffix} ECS Tasks Security Group - The description of the security group"
+  description = "$${var.name_prefix} ECS Tasks Security Group - The description of the security group"
   value       = module.ecs-fargate-service.ecs_tasks_sg_description
 }

@@ -1,8 +1,12 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # Misc
 # ---------------------------------------------------------------------------------------------------------------------
-variable "name_preffix" {
+variable "name_prefix" {
   description = "Name preffix for resources on AWS"
+}
+
+variable "certificate_arn" {
+  description = "Certificate ARN"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -24,7 +28,7 @@ locals {
   log_driver = "awslogs"
   log_options = {
     "awslogs-region"        = var.region
-    "awslogs-group"         = "/ecs/service/${var.name_preffix}"
+    "awslogs-group"         = "/ecs/service/${var.name_prefix}"
     "awslogs-stream-prefix" = "ecs"
   }
 }
